@@ -47,6 +47,7 @@ def save_object(file_path: str, obj: object) -> None:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
+        logging.info(f"Entered the save_object method of MainUtils class with {file_path} :{file_obj}")
         logging.info("Exited the save_object method of MainUtils class")
     except Exception as e:
         raise NetworkSecurityException(e, sys)
